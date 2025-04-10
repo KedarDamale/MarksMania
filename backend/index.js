@@ -1,50 +1,60 @@
 // Import necessary modules for the application
-import express from "express"; 
-import dotenv from "dotenv"; 
-import cors from "cors"; 
-import cookieParser from "cookie-parser"; 
-import path from "path"; 
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import cookieParser from "cookie-parser";
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import axios from "axios"; // Import axios to send requests
 
 // Import the database connection function
 import { connectDB } from "./db/connectDB.js";
 
 // Import authentication routes
-import authRoutes from "./routes/auth.route.js"; 
+import authRoutes from "./routes/auth.route.js";
 import studentRoutes from "./routes/student.route.js"; // Import student routes
 
+// Resolve the directory name for serving static files
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 // Load environment variables from .env file
-dotenv.config(); 
+dotenv.config();
 
 // Initialize the Express application
 const app = express();
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 5000;
 
-// Resolve the directory name for serving static files
-const __dirname = path.resolve(); 
-
-// Use CORS middleware with specific origin
-app.use(cors({ origin: "http://localhost:5173", credentials: true })); 
+// Use CORS middleware
+app.use(cors());
 
 // Middleware to parse JSON data
-app.use(express.json()); 
+app.use(express.json());
 
 // Middleware to parse cookies
-app.use(cookieParser()); 
+app.use(cookieParser());
 
 // Route for handling authentication-related requests
-app.use("/api/auth", authRoutes); 
+app.use("/api/auth", authRoutes);
 app.use("/api", studentRoutes); // This sets the base path for student, subjects, and marks routes
 
 // Serve static files in production
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "frontend", "dist")));
+    // Serve frontend
+    app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
     // Handle all other routes by serving the main index.html file
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+        res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
     });
 }
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 // Start the server and listen on the specified port
 const startServer = async () => {
@@ -52,10 +62,11 @@ const startServer = async () => {
         await connectDB(); // Connect to the database
 
         app.listen(PORT, () => {
-            console.log("Server is running on port:", PORT);  
+            console.log(`Server running on port ${PORT}`);
         });
     } catch (error) {
-        console.error("Error connecting to the database:", error.message); 
+        console.error("Error:", error);
+        process.exit(1);
     }
 };
 
