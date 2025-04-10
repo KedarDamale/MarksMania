@@ -1,15 +1,15 @@
 {
 	"name": "collegium",
 	"version": "1.0.0",
+	"type": "module",
 	"main": "backend/index.js",
 	"scripts": {
-		"dev": "cross-env NODE_ENV=development nodemon backend/index.js",
-		"start": "NODE_ENV=production node backend/index.js",
-		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
+		"start": "node backend/index.js",
+		"build": "npm install && cd frontend && npm install && npm run build",
+		"dev": "nodemon backend/index.js"
 	},
 	"keywords": [],
 	"author": "KedarDamale",
-	"type": "module",
 	"license": "ISC",
 	"dependencies": {
 		"@google/generative-ai": "^0.21.0",
