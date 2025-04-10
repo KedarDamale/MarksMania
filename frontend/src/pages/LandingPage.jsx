@@ -25,90 +25,90 @@ import video2 from "../assets/video2.mp4";
 // Constants
 const navItems = [
   { label: "Features", href: "#FeatureSection" },
-  { label: "Study-flow", href: "#WorkflowSection" },
+  { label: "Workflow", href: "#WorkflowSection" },
   { label: "Testimonials", href: "#TestimonialsSection" },
 ];
 
 const features = [
   {
     icon: <MessageSquare />,
-    text: "Bespoke Dashboard",
+    text: "Comprehensive Dashboard",
     description:
-      "A tailored dashboard designed specifically to meet your unique needs and preferences.",
+      "A powerful dashboard designed for teachers to manage and analyze student marks efficiently.",
   },
   {
     icon: <Fingerprint />,
-    text: "Expense Tracker",
+    text: "Student Management",
     description:
-      "A personalized expense tracker customized to fit your financial goals and habits.",
+      "Easily manage student records, including registration, batch allocation, and academic details.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Exam Alarms and Trackers",
+    text: "Marks Management",
     description:
-      "Custom alarms and trackers designed to keep you on schedule and organized.",
+      "Streamlined marks entry system with validation and instant calculation features.",
   },
   {
     icon: <BatteryCharging />,
-    text: "Digital Whiteboard",
+    text: "Data Export",
     description:
-      "A bespoke digital whiteboard crafted for seamless collaboration and creativity.",
+      "Export marks data to CSV format for further analysis or record-keeping.",
   },
   {
     icon: <PlugZap />,
-    text: "Lectures to Notes",
+    text: "Statistical Analysis",
     description:
-      "A tailored tool that converts lectures into comprehensive, personalized notes.",
+      "Detailed statistical analysis with visual charts for better performance insights.",
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
+    text: "Subject Management",
     description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+      "Comprehensive subject management system for different branches and semesters.",
   },
 ];
 
 const checklistItems = [
   {
-    title: "Lecture to Notes",
+    title: "Easy Marks Entry",
     description:
-      "AI tool that converts lecture that you missed straight into Notes",
+      "Intuitive interface for quick and accurate marks entry with validation.",
   },
   {
-    title: "Digital Whiteboard",
+    title: "Data Analytics",
     description:
-      "Taking notes and saving them becomes 1000X easier with this tool",
+      "Visual representation of student performance across subjects and batches.",
   },
   {
-    title: "Interview Hub",
+    title: "Export Functionality",
     description:
-      "This AI tool prepares you for the upcoming interview of yours",
+      "Export data to CSV format for external analysis and record-keeping.",
   },
   {
-    title: "Bespoke Dashboard",
+    title: "Subject Management",
     description:
-      "A dashboard enriched with everything that you will need in your study life",
+      "Efficient management of subjects across different branches and semesters.",
   },
 ];
 
 const testimonials = [
   {
-    user: "Kedar Damale",
-    company: "Finolex Academy of Management and Technology",
+    user: "Prof. M. S. Joshi",
+    company: "Department of Computer Science",
     image: user1,
-    text: "StudyONE has transformed my study routine. The Lecture to Notes feature saves me so much time, and the personal library helps me stay organized. It’s like having a study buddy who’s always there to support me",
+    text: "MarksMania has revolutionized how I manage student marks. The analytics dashboard provides valuable insights, and the export feature saves hours of work.",
   },
   {
-    user: "Rehan Dhamaskar",
-    company: "Finolex Academy of Management and Technology",
+    user: "Dr. Y. G. Gajmal",
+    company: "Department of Information Technology",
     image: user2,
-    text: "The StudyONE app is a game-changer for exam preparation. The sticky notes and fact of the day keep me motivated and on track, while the e-commerce store for stationary items is a fantastic addition. Highly recommended for anyone serious about their studies!",
+    text: "The interface is incredibly user-friendly. I can manage multiple subjects and batches effortlessly. The statistical analysis helps identify trends in student performance.",
   },
   {
-    user: "Prathamesh Arlekar",
-    company: "Finolex Academy of Management and Technology",
+    user: "Prof. A. Palwankar",
+    company: "Department of Electronics",
     image: user3,
-    text: "I love the whiteboard feature in StudyONE. It’s perfect for brainstorming and organizing my thoughts visually. The app’s dashboard is incredibly user-friendly, and the expense tracker is a bonus for managing my budget.",
+    text: "MarksMania's subject management and marks entry system is a game-changer. The validation features ensure accuracy, and the export functionality is perfect for documentation.",
   },
 ];
 
@@ -127,7 +127,7 @@ const LandingPage = () => {
             <div className="flex items-center flex-shrink-0">
               <img className="h-14 mr-2" src={Logo123} alt="Logo" />
               <span className="text-3xl tracking-tight text-text-colour">
-                StudyONE
+                MarksMania
               </span>
             </div>
             <ul className="hidden lg:flex ml-14 space-x-12 text-text-colour">
@@ -199,23 +199,23 @@ const LandingPage = () => {
 
       <div className="flex flex-col items-center mt-6 lg:mt-20 px-4 md:px-8 lg:px-16">
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide text-text-colour">
-          Study Companion
+          Marks Management
           <span className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-transparent bg-clip-text">
             {" "}
-            for Students
+            for Teachers
           </span>
         </h1>
         <p className="mt-12 text-lg text-center text-neutral-300 max-w-4xl">
-          Empower your learning journey and enhance your study sessions with our
-          all-in-one study companion. Get started today and transform your
-          academic potential into success!
+          Streamline your academic marks management with our comprehensive solution.
+          From marks entry to statistical analysis, MarksMania helps you manage student
+          performance efficiently.
         </p>
         <div className="flex justify-center my-10">
           <a
             href="/dashboard"
             className="relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gray-900 rounded-md overflow-hidden group"
           >
-            <span className="relative z-10">Launch StudyONE</span>
+            <span className="relative z-10">Launch MarksMania</span>
             <div className="absolute inset-2 bg-gradient-to-r from-[#016e06] via-[#37ff59] to-[#016e06] opacity-50 blur-md transition-transform duration-50 group-hover:scale-110"></div>
           </a>
         </div>
@@ -248,9 +248,9 @@ const LandingPage = () => {
       >
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl mt-8 lg:mt-12 tracking-wide">
-            Easily complete{" "}
+            Efficiently manage{" "}
             <span className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-transparent bg-clip-text">
-              your studies
+              student marks
             </span>
           </h2>
         </div>
@@ -275,9 +275,9 @@ const LandingPage = () => {
 
       <div id="WorkflowSection" className="mt-20 text-text-colour">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide mb-8">
-          Accelerate your{" "}
+          Streamline your{" "}
           <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-transparent bg-clip-text">
-            Study-flow.
+            workflow
           </span>
         </h2>
         <div className="flex flex-wrap justify-center">
@@ -309,7 +309,7 @@ const LandingPage = () => {
         className="mt-20 tracking-wide max-w-5xl mx-auto px-4 md:px-6 lg:px-8 text-text-colour"
       >
         <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-10 lg:my-20">
-          What Students are saying
+          What Teachers are saying
         </h2>
         <div className="flex flex-wrap justify-center">
           {testimonials.map((testimonial, index) => (
@@ -387,7 +387,7 @@ const LandingPage = () => {
 
           {/* Copyright */}
           <div className="text-neutral-300 text-center md:text-left">
-            &copy; {new Date().getFullYear()} StudyONE. All rights reserved.
+            &copy; {new Date().getFullYear()} MarksMania. All rights reserved.
           </div>
         </div>
       </footer>
