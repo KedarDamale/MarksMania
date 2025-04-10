@@ -8,5 +8,5 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sender = {
   email: "damalekedar@gmail.com",
-  name: "StudyONE",
+  name: "MarksMania",
 };
